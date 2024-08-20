@@ -1,13 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/home';
+import Quiz from './screens/quiz';
+import * as Font from 'expo-font';
+import React, { useState, useEffect } from 'react';
 
 export default function App() {
   return (
-    <View>
-      <Home/>
+    <View style={styles.container}>
+      <Quiz/>
     </View>
   );
 }
 
-
+const styles = StyleSheet.create({
+container:{
+  flex: 1,
+  
+  alignItems: 'center',
+  justifyContent: 'center'
+}
+})
