@@ -1,9 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
-export default function ButtonSmall({ label, onPress }) {
+export default function TopButton({ label, onPress }) {
   return (
-    <View style={[styles.buttonContainer, {borderWidth: 4, borderColor: "#c66db5", borderRadius:18,  }]}>
+    <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={() => alert('You pressed a button')}>
         <Text style={styles.buttonLabel}>{label}</Text>
       </TouchableOpacity>
@@ -13,18 +13,18 @@ export default function ButtonSmall({ label, onPress }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 150,
-    height: 68,
+    width: 70,
+    height: 50,
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 3,
+    padding: 1,
   },
   button: {
     backgroundColor: '#fcac71',
     borderRadius: 10,
-    width: '100%',
-    height: '100%',
+    width: '80%',
+    height: '80%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',

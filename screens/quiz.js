@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,  // Adds padding to prevent content from being too close to the edges
+    padding: 20,  
   },
   footerContainer: {
     flex: 1,
