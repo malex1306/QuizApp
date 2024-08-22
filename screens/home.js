@@ -6,11 +6,12 @@ import TopButton from '../componets/topButton';
 import { LinearGradient } from 'expo-linear-gradient';
 import Gradient from '../componets/gradient';
 import FloatingButton from '../componets/floatingButton';
+import Title from '../componets/title';
 
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <ImageBackground 
       source={require('../assets/background.jpg')} 
@@ -19,12 +20,13 @@ const Home = () => {
     >
       
       <View style={styles.container}>
+        <Title />
       <FloatingButton style={styles.FloatingButton} />
-        <View style={styles.headFont}>
-          <Text style={[styles.letter, { fontFamily: 'CustomFont' }]}>Quizzler</Text>
-        </View>
+        
         <View style={styles.footerContainer}>
-          <Button label="QUIZ" />
+          <Button label="QUIZ"
+          onPress={() => navigation.navigate('Quiz')}
+          />
           <Button label="CARDS" />
           <Button label="TEST" />
           <Button label="SHOP" />

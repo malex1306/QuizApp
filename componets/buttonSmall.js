@@ -8,7 +8,7 @@ export default function ButtonSmall({ label, onPress }) {
        colors={['#E59C67' ,'#FCAC71','#FED0AE','#FFE2CD']}
        style={styles.gradient}
        >
-      <TouchableOpacity style={styles.button} onPress={() => alert('You pressed a button')}>
+      <TouchableOpacity style={styles.button}>
         <Text style={[styles.buttonLabel, {fontFamily: 'CustomFont'}]}>{label}</Text>
       </TouchableOpacity>
       </LinearGradient>

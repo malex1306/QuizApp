@@ -7,6 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { useFonts } from 'expo-font'; 
 import * as SplashScreen from 'expo-splash-screen'
 import FloatingButton from './componets/floatingButton';
+import { NavigationContainer } from '@react-navigation/native';
+import MyStack from './navigation/myStack';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,9 +29,9 @@ export default function App() {
     }
   
   return (
-    <View style={styles.container}>
-      <Home/>
-    </View>
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
   );
 }
 

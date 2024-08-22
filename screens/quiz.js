@@ -3,14 +3,16 @@ import React from 'react';
 import Button from '../componets/button';
 import ButtonSmall from '../componets/buttonSmall';
 import { StatusBar } from 'expo-status-bar';
+import Title from '../componets/title';
 
-export default function Quiz() {
+export default function Quiz({navigation}) {
   return (
     <ImageBackground 
       source={require('../assets/background.jpg')} // Pfad zu deinem Hintergrundbild
       style={styles.background}
     >
       <View style={styles.container}>
+        <Title/>
         <View style={styles.footerContainer}>
           <Button label="Option 1"/>
           <Button label="Option 2"/>
@@ -18,7 +20,7 @@ export default function Quiz() {
           <Button label="Option 4"/>
         </View>
         <View style={styles.continue}>
-          <ButtonSmall label="SKIP"/>
+          <ButtonSmall label="HOME" onPress={() => navigation.navigate('Home')}/>
           <ButtonSmall label="NEXT"/>
         </View>
         <StatusBar style="auto" />
