@@ -24,14 +24,14 @@ const Home = () => {
           <Text style={[styles.letter, { fontFamily: 'CustomFont' }]}>Quizzler</Text>
         </View>
         <View style={styles.footerContainer}>
-          <Button label="START" />
-          <Button label="SCORE" />
-          <Button label="PROFILE" />
-          <Button label="SETTINGS" />
+          <Button label="QUIZ" />
+          <Button label="CARDS" />
+          <Button label="TEST" />
+          <Button label="SHOP" />
         </View>
         <View style={styles.smallFooterContainer}>
           <ButtonSmall label="QUIT" />
-          <ButtonSmall label="FOLLOW" />
+          <ButtonSmall label="ABOUT" />
         </View>
       </View>
 
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 
   headFont: {
     
-    marginTop: 180,
+    marginTop: 160,
     alignItems: 'center',
   },
   letter: {
