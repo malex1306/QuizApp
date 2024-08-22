@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import linearGradient from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Gradient({ label, onPress }) {
   return (
-    <linearGradient
+    <LinearGradient
     colors={['','','']}
     style={{
         borderRadius: 20,
@@ -17,6 +17,6 @@ export default function Gradient({ label, onPress }) {
 
     }}>,
         <Text></Text>
-    </linearGradient>
+    </LinearGradient>
   );
 }

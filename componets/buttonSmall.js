@@ -1,12 +1,17 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-
+import { LinearGradient } from 'expo-linear-gradient';
 export default function ButtonSmall({ label, onPress }) {
   return (
-    <View style={[styles.buttonContainer, {borderWidth: 4, borderColor: "#c66db5", borderRadius:18,  }]}>
+    <View style={styles.buttonContainer}>
+      <LinearGradient
+       colors={['#E59C67' ,'#FCAC71','#FED0AE','#FFE2CD']}
+       style={styles.gradient}
+       >
       <TouchableOpacity style={styles.button} onPress={() => alert('You pressed a button')}>
-        <Text style={styles.buttonLabel}>{label}</Text>
+        <Text style={[styles.buttonLabel, {fontFamily: 'CustomFont'}]}>{label}</Text>
       </TouchableOpacity>
+      </LinearGradient>
     </View>
   );
 }
@@ -21,7 +26,7 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   button: {
-    backgroundColor: '#fcac71',
+    
     borderRadius: 10,
     width: '100%',
     height: '100%',
@@ -33,6 +38,15 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     color: '#010a2b',
-    fontSize: 20,
+    fontSize: 30,
+  },
+
+  gradient: {
+    borderRadius: 20,
+    marginTop: 50,
+    height: '100%',  // Damit der Gradient die ganze Fläche abdeckt
+    width: '100%',
+    alignItems: 'center',  // Zentriert den Inhalt
+    justifyContent: 'center',  // Zentriert den Inhalt
   },
 });

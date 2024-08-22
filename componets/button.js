@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
@@ -15,7 +16,11 @@ export default function Button({ label, onPress }) {
 
   return (
     <View style={styles.buttonContainer}>
-      <TouchableOpacity
+      <LinearGradient
+       colors={['#E59C67' ,'#FCAC71','#FED0AE','#FFE2CD']}
+       style={styles.gradient}
+       >
+        <TouchableOpacity
         style={[styles.button, isPressed && styles.buttonPressed]}
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
@@ -23,6 +28,8 @@ export default function Button({ label, onPress }) {
       >
         <Text style={[styles.buttonLabel, isPressed && styles.buttonLabelPressed]}>{label}</Text>
       </TouchableOpacity>
+      </LinearGradient>
+
     </View>
   );
 }
@@ -36,25 +43,34 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 3,
   },
+  
   button: {
-    backgroundColor: '#fcac71',
-    borderRadius: 10,
-    borderWidth: 2,  // Breite des Rahmens
-    borderColor: '#010a2b',  // Farbe des Rahmens
     width: '100%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row',
+    borderRadius: 20, 
   },
+  
+
   buttonPressed: {
     backgroundColor: '#FED0AE',  // Der Button-Hintergrund wird transparent
   },
   buttonLabel: {
-    color: '#010a2b',
-    fontSize: 20,
+    color: 'black',
+    fontSize: 40,
+    fontFamily: 'CustomFont'
   },
   buttonLabelPressed: {
-    color: '#010a2b',  // Text bleibt sichtbar
+    color: 'black',  // Text bleibt sichtbar
+  },
+
+  gradient: {
+    borderRadius: 20,
+    marginTop: 50,
+    height: '90%',  // Damit der Gradient die ganze Fläche abdeckt
+    width: '80%',
+    alignItems: 'center',  // Zentriert den Inhalt
+    justifyContent: 'center',  // Zentriert den Inhalt
   },
 });

@@ -1,8 +1,14 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import Button from '../componets/button';  // Achte auf die korrekte Groß- und Kleinschreibung
-import ButtonSmall from '../componets/buttonSmall';  // Achte auf die korrekte Groß- und Kleinschreibung
-import TopButton from '../componets/topButton';  // Achte auf die korrekte Groß- und Kleinschreibung
+import Button from '../componets/button';  
+import ButtonSmall from '../componets/buttonSmall';  
+import TopButton from '../componets/topButton'; 
+import { LinearGradient } from 'expo-linear-gradient';
+import Gradient from '../componets/gradient';
+import FloatingButton from '../componets/floatingButton';
+
+
+
 
 const Home = () => {
   return (
@@ -11,13 +17,11 @@ const Home = () => {
       style={styles.background}
       resizeMode="cover"
     >
-      <View style={styles.topFooterContainer}>
-        <TopButton label="ph" />
-        <TopButton label="ph1" />  {/* Achte auf die korrekte Groß- und Kleinschreibung */}
-      </View>
+      
       <View style={styles.container}>
+      <FloatingButton style={styles.FloatingButton} />
         <View style={styles.headFont}>
-          <Text style={[styles.letter, { fontFamily: 'Dots' }]}>Quizzler</Text>
+          <Text style={[styles.letter, { fontFamily: 'CustomFont' }]}>Quizzler</Text>
         </View>
         <View style={styles.footerContainer}>
           <Button label="START" />
@@ -30,7 +34,9 @@ const Home = () => {
           <ButtonSmall label="FOLLOW" />
         </View>
       </View>
+
     </ImageBackground>
+    
   );
 };
 
@@ -42,18 +48,29 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  
   container: {
     flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
   },
+
+  FloatingButton:{
+    position:'absolute',
+    top:20,
+    left:60,
+  },
+
   footerContainer: {
+    flex:1,
     width: '100%',
     alignItems: 'center',
   },
+
   headFont: {
-    marginTop: 10,
+    
+    marginTop: 180,
     alignItems: 'center',
   },
   letter: {
@@ -66,13 +83,13 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     justifyContent: "space-between",
     flexDirection: "row",
-    width: '100%',  // Ensure the container takes full width
+    width: '100%', 
   },
   topFooterContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,  // Adjust padding as needed
+    paddingHorizontal: 20,  
     paddingVertical: 16,
-    width: '100%',  // Ensure the container takes full width
+    width: '100%', 
   }
 });
