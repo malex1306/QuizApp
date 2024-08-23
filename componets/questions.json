@@ -98,6 +98,106 @@
         "255.255.255.240"
       ],
       "correctAnswer": "255.255.255.192"
+    },
+    {
+      "question": "Was ist ein GAN?",
+      "options": [
+        "Global Area Network",
+        "Global Access Network",
+        "Global Administrative Network",
+        "Global Application Network"
+      ],
+      "correctAnswer": "Global Area Network"
+    },
+    {
+      "question": "Welches Netzwerk deckt einen großen geografischen Bereich ab?",
+      "options": [
+        "WAN",
+        "LAN",
+        "MAN",
+        "VLAN"
+      ],
+      "correctAnswer": "WAN"
+    },
+    {
+      "question": "Welche Topologie ist am ausfallsichersten?",
+      "options": [
+        "Stern",
+        "Ring",
+        "Bus",
+        "Linie"
+      ],
+      "correctAnswer": "Stern"
+    },
+    {
+      "question": "Was beschreibt die OSI-Schicht 4?",
+      "options": [
+        "Transportschicht",
+        "Netzwerkschicht",
+        "Anwendungsschicht",
+        "Sitzungsschicht"
+      ],
+      "correctAnswer": "Transportschicht"
+    },
+    {
+      "question": "Welche der folgenden IP-Adressen ist Teil des 7. Netzes mit Subnetzmaske 255.255.255.252?",
+      "options": [
+        "192.168.1.25",
+        "192.168.1.20",
+        "192.168.1.18",
+        "192.168.1.10"
+      ],
+      "correctAnswer": "192.168.1.25"
+    },
+    {
+      "question": "Was wird im TCP-Header durch die Sequenznummer angezeigt?",
+      "options": [
+        "Reihenfolge der Segmente",
+        "Ziel-IP-Adresse",
+        "Quellport",
+        "TTL-Wert"
+      ],
+      "correctAnswer": "Reihenfolge der Segmente"
+    },
+    {
+      "question": "Was ist das Ergebnis der Subnetzmaske 255.255.254.0?",
+      "options": [
+        "1024 IP-Adressen",
+        "512 IP-Adressen",
+        "2048 IP-Adressen",
+        "256 IP-Adressen"
+      ],
+      "correctAnswer": "1024 IP-Adressen"
+    },
+    {
+      "question": "Was beschreibt CIDR?",
+      "options": [
+        "Class-Inter-Domain-Routing",
+        "Class-Internet-Domain-Routing",
+        "Central-Inter-Domain-Routing",
+        "Custom-Inter-Domain-Routing"
+      ],
+      "correctAnswer": "Class-Inter-Domain-Routing"
+    },
+    {
+      "question": "Welche Schicht des OSI-Modells ist für die Verschlüsselung zuständig?",
+      "options": [
+        "Sitzungsschicht",
+        "Transportschicht",
+        "Netzwerkschicht",
+        "Darstellungsschicht"
+      ],
+      "correctAnswer": "Sitzungsschicht"
+    },
+    {
+      "question": "Welche Funktion hat das SYN-Flag im TCP-Protokoll?",
+      "options": [
+        "Verbindung initiieren",
+        "Verbindung beenden",
+        "Datenpaket fragmentieren",
+        "Daten übertragen"
+      ],
+      "correctAnswer": "Verbindung initiieren"
     }
   ]
   
