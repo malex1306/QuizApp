@@ -1,0 +1,103 @@
+[
+    {
+      "question": "Wie viele Subnetze können in einem Class C-Netzwerk mit einer Subnetzmaske von 255.255.255.240 erstellt werden?",
+      "options": [
+        "16",
+        "4",
+        "8",
+        "32"
+      ],
+      "correctAnswer": "8"
+    },
+    {
+      "question": "Welche Subnetzmaske entspricht der CIDR-Notation /26?",
+      "options": [
+        "255.255.255.224",
+        "255.255.255.192",
+        "255.255.255.240",
+        "255.255.255.248"
+      ],
+      "correctAnswer": "255.255.255.192"
+    },
+    {
+      "question": "Wie viele Hosts können in einem Subnetz mit der Maske 255.255.255.248 adressiert werden?",
+      "options": [
+        "14",
+        "4",
+        "6",
+        "8"
+      ],
+      "correctAnswer": "6"
+    },
+    {
+      "question": "Welche der folgenden Subnetzmasken hat die meisten möglichen Subnetze bei einem Class B-Netzwerk?",
+      "options": [
+        "255.255.240.0",
+        "255.255.192.0",
+        "255.255.255.0",
+        "255.255.128.0"
+      ],
+      "correctAnswer": "255.255.255.0"
+    },
+    {
+      "question": "Was ist die Broadcast-Adresse eines Subnetzes mit der IP-Adresse 192.168.10.16 und der Subnetzmaske 255.255.255.240?",
+      "options": [
+        "192.168.10.31",
+        "192.168.10.30",
+        "192.168.10.15",
+        "192.168.10.17"
+      ],
+      "correctAnswer": "192.168.10.31"
+    },
+    {
+      "question": "Welches Subnetz enthält die IP-Adresse 192.168.1.77 bei einer Subnetzmaske von 255.255.255.192?",
+      "options": [
+        "192.168.1.0",
+        "192.168.1.64",
+        "192.168.1.128",
+        "192.168.1.192"
+      ],
+      "correctAnswer": "192.168.1.64"
+    },
+    {
+      "question": "Wie viele Hosts können in einem Netzwerksegment mit einer /28 Subnetzmaske untergebracht werden?",
+      "options": [
+        "14",
+        "30",
+        "6",
+        "62"
+      ],
+      "correctAnswer": "14"
+    },
+    {
+      "question": "Welche der folgenden Subnetzmasken ist eine Standardmaske für ein Class A-Netzwerk?",
+      "options": [
+        "255.255.255.0",
+        "255.0.0.0",
+        "255.255.0.0",
+        "255.255.192.0"
+      ],
+      "correctAnswer": "255.0.0.0"
+    },
+    {
+      "question": "Welche der folgenden IP-Adressen gehört zum Subnetz 172.16.32.0/20?",
+      "options": [
+        "172.16.48.1",
+        "172.16.31.255",
+        "172.16.47.255",
+        "172.16.64.1"
+      ],
+      "correctAnswer": "172.16.47.255"
+    },
+    {
+      "question": "Welche Subnetzmaske verwendet man, um ein Netzwerk in 4 gleich große Subnetze zu unterteilen?",
+      "options": [
+        "255.255.255.192",
+        "255.255.255.224",
+        "255.255.255.248",
+        "255.255.255.240"
+      ],
+      "correctAnswer": "255.255.255.192"
+    }
+  ]
+  

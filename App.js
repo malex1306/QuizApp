@@ -10,6 +10,7 @@ import FloatingButton from './componets/floatingButton';
 import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './navigation/myStack';
 
+
 SplashScreen.preventAutoHideAsync();
 
 
@@ -29,9 +30,15 @@ export default function App() {
     }
   
   return (
+    
     <NavigationContainer>
+          <View>
+      <FloatingButton style={styles.FloatingButton} />
+    </View>
       <MyStack />
     </NavigationContainer>
+
+    
   );
 }
 
@@ -41,5 +48,11 @@ container:{
   flex: 1,
   alignItems: 'center',
   justifyContent: 'center'
+},
+
+FloatingButton:{
+  position:'absolute',
+  top:20,
+  left:60,
 },
 });
