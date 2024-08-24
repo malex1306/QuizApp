@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, ScrollView } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import Button from '../componets/button';
 import ButtonSmall from '../componets/buttonSmall';
@@ -11,6 +11,8 @@ export default function Quiz({ navigation }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
+  const [score, setScore] = useState(0);
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
 
   useEffect(() => {
     const shuffledQuestions = shuffleArray(questionsData);
@@ -27,7 +29,11 @@ export default function Quiz({ navigation }) {
       setSelectedOption(null);
       setIsCorrect(null);
     } else {
-      navigation.navigate('Home');
+      navigation.navigate('Result', {
+        score: score,
+        totalQuestions: questions.length,
+        incorrectAnswers: incorrectAnswers,
+      });
     }
   };
 
@@ -35,7 +41,18 @@ export default function Quiz({ navigation }) {
     if (selectedOption === null) {
       setSelectedOption(option);
       const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-      setIsCorrect(option === correctAnswer);
+      const isAnswerCorrect = option === correctAnswer;
+      setIsCorrect(isAnswerCorrect);
+
+      if (isAnswerCorrect) {
+        setScore(score + 1);
+      } else {
+        setIncorrectAnswers([...incorrectAnswers, {
+          question: questions[currentQuestionIndex].question,
+          correctAnswer: correctAnswer,
+          selectedOption: option,
+        }]);
+      }
     }
   };
 
@@ -59,7 +76,7 @@ export default function Quiz({ navigation }) {
         <Text style={[styles.questionText, { fontFamily: 'CustomFont' }]}>
           {currentQuestion.question}
         </Text>
-        <View style={styles.footerContainer}>
+        <ScrollView contentContainerStyle={styles.footerContainer}>
           {currentQuestion.options.map((option, index) => (
             <Button
               key={index}
@@ -74,7 +91,7 @@ export default function Quiz({ navigation }) {
               }
             />
           ))}
-        </View>
+        </ScrollView>
         <View style={styles.continue}>
           <ButtonSmall label="HOME" onPress={() => navigation.navigate('Home')} />
           <ButtonSmall
@@ -114,7 +131,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   footerContainer: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -127,10 +143,8 @@ const styles = StyleSheet.create({
   },
   correctBorder: {
     borderColor: 'green',
-    borderWidth: 4,
   },
   incorrectBorder: {
     borderColor: 'red',
-    borderWidth: 4,
   },
 });

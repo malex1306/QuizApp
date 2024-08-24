@@ -24,7 +24,7 @@ const Home = ({navigation}) => {
       <FloatingButton style={styles.FloatingButton} />
         
         <View style={styles.footerContainer}>
-          <Button label="QUIZ"
+          <Button label="NETWORK QUIZ"
           onPress={() => navigation.navigate('Quiz')}
           />
           <Button label="CARDS" />
