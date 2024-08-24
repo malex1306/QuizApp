@@ -1,8 +1,8 @@
-import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Button({ label, onPress }) {
+export default function Button({ label, onPress, style }) {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePressIn = () => {
@@ -11,22 +11,22 @@ export default function Button({ label, onPress }) {
 
   const handlePressOut = () => {
     setIsPressed(false);
-    onPress && onPress();  // onPress wird aufgerufen, wenn eine Funktion übergeben wurde
+    onPress && onPress();
   };
 
   return (
-    <View style={styles.buttonContainer}>
+    <View style={[styles.buttonContainer, style]}>
       <LinearGradient
         colors={['#E59C67', '#FCAC71', '#FED0AE', '#FFE2CD']}
         style={styles.gradient}
       >
         <TouchableOpacity
-          style={[styles.button, isPressed && styles.buttonPressed]}
+          style={[styles.button]}
           onPressIn={handlePressIn}
           onPressOut={handlePressOut}
-          activeOpacity={1}  
+          activeOpacity={1}
         >
-          <Text style={[styles.buttonLabel, isPressed && styles.buttonLabelPressed]} numberOfLines={1} ellipsizeMode="tail">
+          <Text style={[styles.buttonLabel]} numberOfLines={2} ellipsizeMode="tail">
             {label}
           </Text>
         </TouchableOpacity>
@@ -43,37 +43,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
+    borderRadius: 20,
+    borderWidth: 4,
+    borderColor: 'transparent',
   },
-  
   button: {
     width: '100%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20, 
+    borderRadius: 16,
   },
-
-  buttonPressed: {
-    backgroundColor: '#FED0AE',
-  },
-  
   buttonLabel: {
     color: 'black',
-    fontSize: 20,  
+    fontSize: 25,
     fontFamily: 'CustomFont',
-    textAlign: 'center',  
-    paddingHorizontal: 10, // Füge horizontales Padding hinzu, um Rand zu schaffen
+    textAlign: 'center',
+    paddingHorizontal: 10,
   },
-  
-  buttonLabelPressed: {
-    color: 'black',
-  },
-
   gradient: {
-    borderRadius: 20,
-    marginTop: 50,
-    height: '100%',  // Gradient deckt die gesamte Höhe ab
-    width: '100%',  // Gradient deckt die gesamte Breite ab
+    borderRadius: 16,
+    height: '100%',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
