@@ -7,6 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Gradient from '../componets/gradient';
 import FloatingButton from '../componets/floatingButton';
 import Title from '../componets/title';
+import About from './about';
 
 
 
@@ -29,11 +30,13 @@ const Home = ({navigation}) => {
           />
           <Button label="CARDS" />
           <Button label="TEST" />
-          <Button label="SHOP" />
+          <Button label="ABOUT" 
+          onPress={() => navigation.navigate('About')}
+          />
         </View>
         <View style={styles.smallFooterContainer}>
           <ButtonSmall label="QUIT" />
-          <ButtonSmall label="ABOUT" />
+          
         </View>
       </View>
 
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
   smallFooterContainer: {
     marginBottom: 20,
     paddingVertical: 16,
-    justifyContent: "space-between",
+    justifyContent: "center",
     flexDirection: "row",
     width: '100%', 
   },
