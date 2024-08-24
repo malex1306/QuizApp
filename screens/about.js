@@ -11,8 +11,8 @@ const About = ({navigation}) => {
     resizeMode="cover"
   >
     <View>
-      <Text style={[styles.About, {fontFamily:'CustomFont', color:'white'}]}>Diese App befindet sich aktuell in der Entwicklung. Deshalb sind 
-        noch nicht alle Funktion verfügbar!
+      <Text style={[styles.About, {fontFamily:'CustomFont', color:'white'}]}>Diese App befindet sich aktuell in der Entwicklung, weshalb  
+        noch nicht alle Funktion verfügbar sind!
       </Text>
       <View style={styles.home}>
       <ButtonSmall label="HOME" onPress={() => navigation.navigate('Home')} />
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
         marginTop:200,
         fontSize:30,
         paddingHorizontal:50,
+        textAlign:'center'
     },
     background: {
         flex: 1,
