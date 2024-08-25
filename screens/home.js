@@ -36,7 +36,7 @@ const Home = ({navigation}) => {
           />
         </View>
         <View style={styles.smallFooterContainer}>
-          <ButtonSmall label="QUIT" />
+          <ButtonSmall label="QUIT"/>
           
         </View>
       </View>

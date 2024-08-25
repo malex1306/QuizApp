@@ -25,6 +25,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
+    shadowColor: '#570082', // Schattenfarbe
+    shadowOffset: { width: 0, height: 4 }, // Schattenversatz
+    shadowOpacity: 0.7, // Schattenopazität
+    shadowRadius: 10, // Schattenradius
+    elevation: 10, // Android elevation für Schatten
   },
   button: {
     borderRadius: 10,

@@ -21,7 +21,7 @@ export default function Button({ label, onPress, style }) {
         style={styles.gradient}
       >
         <TouchableOpacity
-          style={[styles.button]}
+          style={[styles.button, isPressed && styles.buttonPressed]}
           onPressIn={handlePressIn}
           onPressOut={handlePressOut}
           activeOpacity={1}
@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 4,
     borderColor: 'transparent',
+    shadowColor: '#570082', // Schattenfarbe
+    shadowOffset: { width: 0, height: 4 }, // Schattenversatz
+    shadowOpacity: 0.7, // Schattenopazität
+    shadowRadius: 10, // Schattenradius
+    elevation: 10, // Android elevation für Schatten
   },
   button: {
     width: '100%',
@@ -54,6 +59,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 16,
   },
+  //buttonPressed: {
+    //shadowOffset: { width: 0, height: 4 }, // geringerer Schatten beim Drücken
+    //shadowOpacity: 0.7,
+    //elevation: 4,
+  //},
   buttonLabel: {
     color: 'black',
     fontSize: 25,

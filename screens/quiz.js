@@ -73,7 +73,9 @@ export default function Quiz({ navigation }) {
       resizeMode='cover'
     >
       <View style={styles.container}>
-        <Title />
+        <View style={styles.containerHead}>
+          <Text style={[styles.header, {fontFamily:'CustomFont'}]}>Network</Text>
+          </View>
         <Text style={[styles.questionText, { fontFamily: 'CustomFont' }]}>
           {currentQuestion.question}
         </Text>
@@ -118,6 +120,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+  },
+  containerHead:{
+     paddingVertical:5,
+      justifyContent:"center",
+      alignItems: "center"
+  },
+  header:{
+    marginTop: 150,
+    alignItems: 'center',
+    fontSize:70,
+    color:'white'
   },
   loadingText: {
     fontSize: 20,
