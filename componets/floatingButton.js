@@ -78,6 +78,7 @@ export default class FloatingButton extends React.Component {
 
     return (
       <View style={[styles.container, this.props.style]}>
+        
         <TouchableWithoutFeedback>
             <Animated.View style={[styles.button, styles.secondary, hertoStyle, opacity]}>
                 <AntDesign name="hearto" size={26} color="#fcac71"/>

@@ -70,6 +70,7 @@ export default function Quiz({ navigation }) {
     <ImageBackground
       source={require('../assets/background.jpg')}
       style={styles.background}
+      resizeMode='cover'
     >
       <View style={styles.container}>
         <Title />

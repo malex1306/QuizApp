@@ -2,6 +2,7 @@ import {ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { processFontFamily } from 'expo-font'
 import ButtonSmall from '../componets/buttonSmall'
+import FloatingButton from '../componets/floatingButton'
 
 const About = ({navigation}) => {
   return (
@@ -11,6 +12,7 @@ const About = ({navigation}) => {
     resizeMode="cover"
   >
     <View>
+    <FloatingButton style={styles.FloatingButton} />
       <Text style={[styles.About, {fontFamily:'CustomFont', color:'white'}]}>Diese App befindet sich aktuell in der Entwicklung, weshalb  
         noch nicht alle Funktion verfügbar sind!
       </Text>
@@ -45,5 +47,10 @@ const styles = StyleSheet.create({
         paddingVertical: 200,
         justifyContent: 'center',
         flexDirection: 'row',
-      }
+      },
+      FloatingButton:{
+        position:'absolute',
+        top:20,
+        left:60,
+      },
 })

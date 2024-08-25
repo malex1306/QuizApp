@@ -8,6 +8,7 @@ import Gradient from '../componets/gradient';
 import FloatingButton from '../componets/floatingButton';
 import Title from '../componets/title';
 import About from './about';
+import GlowingButton from '../componets/glowingButton';
 
 
 
