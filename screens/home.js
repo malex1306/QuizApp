@@ -29,14 +29,12 @@ const Home = ({navigation}) => {
           <Button label="NETWORK QUIZ"
           onPress={() => navigation.navigate('Quiz')}
           />
-          <Button label="CARDS" />
+          <Button label="CARDS" onPress={() => navigation.navigate('Cards')}/>
           <Button label="TEST" />
-          <Button label="ABOUT" 
-          onPress={() => navigation.navigate('About')}
-          />
+          <Button label="HANGMAN" />
         </View>
         <View style={styles.smallFooterContainer}>
-          <ButtonSmall label="QUIT"/>
+          <ButtonSmall label="ABOUT" onPress={() => navigation.navigate('About')}/>
           
         </View>
       </View>

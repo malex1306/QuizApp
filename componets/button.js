@@ -48,9 +48,9 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     shadowColor: '#570082', // Schattenfarbe
     shadowOffset: { width: 0, height: 4 }, // Schattenversatz
-    shadowOpacity: 0.7, // Schattenopazität
-    shadowRadius: 10, // Schattenradius
-    elevation: 10, // Android elevation für Schatten
+    shadowOpacity: 0.3, // Schattenopazität
+    shadowRadius: 100, // Schattenradius
+    elevation: 5, // Android elevation für Schatten
   },
   button: {
     width: '100%',

@@ -3,6 +3,7 @@ import Home from '../screens/home';
 import Quiz from '../screens/quiz';
 import Result from '../screens/result';
 import About from '../screens/about';
+import Cards from '../screens/cards';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,8 @@ function MyStack() {
              <Stack.Screen name="Result" component={Result}
             options={{headerShown:false}}/>
              <Stack.Screen name="About" component={About}
+            options={{headerShown:false}}/>
+            <Stack.Screen name="Cards" component={Cards}
             options={{headerShown:false}}/>
         </Stack.Navigator>
         

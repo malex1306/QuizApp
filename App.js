@@ -9,6 +9,9 @@ import * as SplashScreen from 'expo-splash-screen'
 import FloatingButton from './componets/floatingButton';
 import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './navigation/myStack';
+import Cards from './screens/cards';
+
+
 
 
 SplashScreen.preventAutoHideAsync();
@@ -33,9 +36,9 @@ export default function App() {
     
     <NavigationContainer>
           <View>
-      <FloatingButton style={styles.FloatingButton} />
+      <FloatingButton style={styles.FloatingButton}/>
     </View>
-      <MyStack />
+      <MyStack/>
     </NavigationContainer>
 
     

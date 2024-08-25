@@ -1,9 +1,12 @@
 import { Text, StyleSheet, View, Animated, TouchableWithoutFeedback, Linking } from 'react-native';
 import React, { Component } from 'react';
 import { Entypo } from "@expo/vector-icons";
+import { LinearGradient } from 'expo-linear-gradient';
+
+
 
 export default class FloatingButton extends React.Component {
-  animation = new Animated.Value(0);
+  animation = new Animated.Value(1);
 
   toggleMenu = () => {
     const toValue = this.open ? 0 : 1;
@@ -11,7 +14,8 @@ export default class FloatingButton extends React.Component {
     Animated.spring(this.animation, {
       toValue,
       friction: 5,
-      useNativeDriver: true, // Wichtig für bessere Performance
+      useNativeDriver: true, 
+      // Wichtig für bessere Performance
     }).start();
 
     this.open = !this.open;
@@ -20,6 +24,7 @@ export default class FloatingButton extends React.Component {
   handlePress = (url) => {
     Linking.openURL(url).catch(err => console.error("An error occurred", err));
   };
+  
 
   render() {
     const mouseStyle = {
@@ -75,7 +80,7 @@ export default class FloatingButton extends React.Component {
     });
 
     return (
-      <View style={[styles.container, this.props.style]}>
+      <View style={[styles.container, this.props.style]} >
         <TouchableWithoutFeedback onPress={() => this.handlePress('https://github.com/malex1306')}>
           <Animated.View style={[styles.button, styles.secondary, hertoStyle, { opacity }]}>
             <Entypo name="github" size={26} color="#fcac71" />
@@ -93,10 +98,15 @@ export default class FloatingButton extends React.Component {
             <Entypo name="xing" size={26} color="#fcac71" />
           </Animated.View>
         </TouchableWithoutFeedback>
-
+      
         <TouchableWithoutFeedback onPress={this.toggleMenu}>
           <Animated.View style={[styles.button, styles.menu, rotation]}>
+          <LinearGradient
+        colors={['#E59C67', '#FCAC71', '#FED0AE', '#FFE2CD']}
+        style={styles.gradient}
+      >
             <Entypo name="menu" size={28} color="#000" />
+            </LinearGradient>
           </Animated.View>
         </TouchableWithoutFeedback>
       </View>
@@ -121,6 +131,14 @@ const styles = StyleSheet.create({
     shadowColor: "#E59C67",
     shadowOpacity: 0.9,
     shadowOffset: { height: 10 },
+    
+  },
+  gradient: {
+    borderRadius: 16,
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   menu: {
     backgroundColor: "#FCAC71",
