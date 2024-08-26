@@ -10,6 +10,7 @@ export default class FloatingButton extends React.Component {
 
   toggleMenu = () => {
     const toValue = this.open ? 0 : 1;
+   
 
     Animated.spring(this.animation, {
       toValue,
@@ -17,7 +18,6 @@ export default class FloatingButton extends React.Component {
       useNativeDriver: true, 
       // Wichtig für bessere Performance
     }).start();
-
     this.open = !this.open;
   };
 
@@ -105,7 +105,7 @@ export default class FloatingButton extends React.Component {
         colors={['#E59C67', '#FCAC71', '#FED0AE', '#FFE2CD']}
         style={styles.gradient}
       >
-            <Entypo name="menu" size={28} color="#000" />
+            <Entypo name="thumbs-up" size={28} color="#000" />
             </LinearGradient>
           </Animated.View>
         </TouchableWithoutFeedback>
