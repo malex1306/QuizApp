@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default class FloatingButton extends React.Component {
-  animation = new Animated.Value(1);
+  animation = new Animated.Value(0);
 
   toggleMenu = () => {
     const toValue = this.open ? 0 : 1;

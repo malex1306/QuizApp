@@ -1,6 +1,7 @@
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
+import Button from '../componets/button'
 
 const Cards = () => {
   return (
@@ -10,7 +11,7 @@ const Cards = () => {
       resizeMode="cover"
     >
     <View style={styles.container}>
-      <Ionicons.Button name='reader' size={150} backgroundColor={'black'} borderRadius={40}/>
+      <Button label={'Add cards'}/>
     </View>
     </ImageBackground>
   )
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
         position:'absolute',
         top:85,
         left:20,
+        
     },
     background:{
         flex: 1,
