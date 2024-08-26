@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Button({ label, onPress, style }) {
+export default function CardsButton({ label, onPress, style }) {
   const [isPressed, setIsPressed] = useState(false);
 
   const handlePressIn = () => {
@@ -38,7 +38,7 @@ export default function Button({ label, onPress, style }) {
 const styles = StyleSheet.create({
     buttonContainer: {
     width: 150,
-    height: 68,
+    height: 150,
     marginHorizontal: 20,
     alignItems: 'center',
     justifyContent: 'center',

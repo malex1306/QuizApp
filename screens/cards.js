@@ -1,7 +1,9 @@
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import Button from '../componets/button'
+import CardsButton from '../componets/cardsButton'
+import { TextInput } from 'react-native-gesture-handler'
+
 
 const Cards = () => {
   return (
@@ -11,7 +13,8 @@ const Cards = () => {
       resizeMode="cover"
     >
     <View style={styles.container}>
-      <Button label={'Add cards'}/>
+      <CardsButton label={'Add cards'}/>
+      <CardsButton label={'Delete cards'}/>
     </View>
     </ImageBackground>
   )
@@ -21,9 +24,10 @@ export default Cards
 
 const styles = StyleSheet.create({
     container:{
-        position:'absolute',
-        top:85,
-        left:20,
+        top:40,
+        left:-80,
+        justifyContent:'space-between',
+        alignItems:'center'
         
     },
     background:{
