@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 3,
     borderRadius: 20,
-    borderWidth: 4,
-    borderColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#f15bb5',
     shadowColor: '#570082', // Schattenfarbe
     shadowOffset: { width: 0, height: 4 }, // Schattenversatz
     shadowOpacity: 0.3, // Schattenopazität
