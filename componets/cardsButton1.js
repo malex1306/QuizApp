@@ -21,6 +21,9 @@ const MyComponent = () => {
 
 const styles= StyleSheet.create({
   buttom:{
+  width:400,
+  justifyContent:'center',
+  alignItems:'center',
   backgroundColor:'white',
   borderRadius:20,
   }
