@@ -9,6 +9,7 @@ import FloatingButton from '../componets/floatingButton';
 import Title from '../componets/title';
 import About from './about';
 import GlowingButton from '../componets/glowingButton';
+import Menu1 from '../componets/menu';
 
 
 
@@ -21,6 +22,7 @@ const Home = ({navigation}) => {
       resizeMode="cover"
     >
       
+      
       <View style={styles.container}>
         <Title />
       <FloatingButton style={styles.FloatingButton} />
@@ -30,7 +32,7 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Quiz')}
           />
           <Button label="CARDS" onPress={() => navigation.navigate('Cards')}/>
-          <Button label="TEST" />
+          <Button label="NETWORK CALC" onPress={() => navigation.navigate('NetworkCalculator')}/>
           <Button label="HANGMAN" />
         </View>
         <View style={styles.smallFooterContainer}>

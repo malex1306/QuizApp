@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './navigation/myStack';
 
 
+
 SplashScreen.preventAutoHideAsync();
 
 
@@ -30,6 +31,7 @@ export default function App() {
     }
   
   return (
+    
     <NavigationContainer>
       <MyStack />
     </NavigationContainer>

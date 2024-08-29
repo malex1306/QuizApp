@@ -17,7 +17,8 @@ export default function Button({ label, onPress, style }) {
   return (
     <View style={[styles.buttonContainer, style]}>
       <LinearGradient
-        colors={['#E59C67', '#FCAC71', '#FED0AE', '#FFE2CD']}
+        colors={['rgba(229, 156, 103, 0.9)', 'rgba(252, 172, 113, 0.9)', 'rgba(254, 208, 174, 0.9)', 'rgba(255, 226, 205, 0.9)'
+        ]}
         style={styles.gradient}
       >
         <TouchableOpacity
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3, // Schattenopazität
     shadowRadius: 100, // Schattenradius
     elevation: 5, // Android elevation für Schatten
+    
   },
   button: {
     width: '100%',
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
   //},
   buttonLabel: {
     color: 'black',
-    fontSize: 25,
+    fontSize: 30,
     fontFamily: 'CustomFont',
     textAlign: 'center',
     paddingHorizontal: 10,

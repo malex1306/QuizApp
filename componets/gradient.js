@@ -12,7 +12,8 @@ export default function Gradient({ label, onPress }) {
         height: 50,
         width: '60%',
         alignSelf: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        
         
 
     }}>,
