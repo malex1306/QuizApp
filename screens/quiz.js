@@ -74,8 +74,8 @@ export default function Quiz({ navigation }) {
     >
       <View style={styles.container}>
         <View style={styles.containerHead}>
-          <Text style={[styles.header, {fontFamily:'CustomFont'}]}>Network</Text>
-          </View>
+          <Text style={[styles.header, { fontFamily:'CustomFont' }]}>Network</Text>
+        </View>
         <Text style={[styles.questionText, { fontFamily: 'CustomFont' }]}>
           {currentQuestion.question}
         </Text>
@@ -96,12 +96,13 @@ export default function Quiz({ navigation }) {
           ))}
         </ScrollView>
         <View style={styles.continue}>
-          <ButtonSmall label="HOME" onPress={() => navigation.navigate('Home')} />
-          <ButtonSmall
-            label="NEXT"
-            onPress={handleNextQuestion}
-            disabled={selectedOption === null}
-          />
+          {/* <ButtonSmall label="HOME" onPress={() => navigation.navigate('Home')} />  */}
+          {selectedOption !== null && (
+            <ButtonSmall
+              label="NEXT"
+              onPress={handleNextQuestion}
+            />
+          )}
         </View>
         <StatusBar style="auto" />
       </View>
@@ -122,15 +123,15 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   containerHead:{
-     paddingVertical:5,
-      justifyContent:"center",
-      alignItems: "center"
+    paddingVertical: 5,
+    justifyContent: "center",
+    alignItems: "center"
   },
   header:{
     marginTop: 150,
     alignItems: 'center',
-    fontSize:70,
-    color:'white'
+    fontSize: 70,
+    color: 'white'
   },
   loadingText: {
     fontSize: 20,

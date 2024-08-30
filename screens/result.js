@@ -12,21 +12,21 @@ export default function Result({ route, navigation }) {
       style={styles.background}
     >
       <View style={styles.container}>
-        <Text style={[styles.title, { fontFamily: 'CustomFont' }]}>Your Results</Text>
-        <Text style={[styles.scoreText, { fontFamily: 'CustomFont' }]}>
+        <Text style={[styles.title, { fontFamily: 'SUSE-VariableFont_wght' }]}>Your Results</Text>
+        <Text style={[styles.scoreText, { fontFamily: 'SUSE-VariableFont_wght' }]}>
           You answered {score} out of {totalQuestions} questions correctly.
         </Text>
         <ScrollView style={styles.scrollView}>
           {incorrectAnswers.length > 0 ? (
             incorrectAnswers.map((item, index) => (
               <View key={index} style={styles.answerContainer}>
-                <Text style={[styles.questionText, { fontFamily: 'CustomFont' }]}>
+                <Text style={[styles.questionText, { fontFamily: 'SUSE-VariableFont_wght' }]}>
                   Question: {item.question}
                 </Text>
-                <Text style={[styles.correctAnswerText, { fontFamily: 'CustomFont' }]}>
+                <Text style={[styles.correctAnswerText, { fontFamily: 'SUSE-VariableFont_wght' }]}>
                   Correct Answer: {item.correctAnswer}
                 </Text>
-                <Text style={[styles.yourAnswerText, { fontFamily: 'CustomFont' }]}>
+                <Text style={[styles.yourAnswerText, { fontFamily: 'SUSE-VariableFont_wght' }]}>
                   Your Answer: {item.selectedOption}
                 </Text>
               </View>

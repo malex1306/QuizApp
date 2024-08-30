@@ -17,7 +17,9 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [loaded, error] = useFonts({
+    'SUSE-VariableFont_wght' : require('./assets/fonts/SUSE-VariableFont_wght.ttf'),
     'CustomFont' : require('./assets/fonts/CustomFont.ttf'),
+    
   });
 
   useEffect(() => {

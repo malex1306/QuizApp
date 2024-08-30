@@ -16,11 +16,7 @@ export default function Button({ label, onPress, style }) {
 
   return (
     <View style={[styles.buttonContainer, style]}>
-      <LinearGradient
-        colors={['rgba(229, 156, 103, 0.9)', 'rgba(252, 172, 113, 0.9)', 'rgba(254, 208, 174, 0.9)', 'rgba(255, 226, 205, 0.9)'
-        ]}
-        style={styles.gradient}
-      >
+      
         <TouchableOpacity
           style={[styles.button, isPressed && styles.buttonPressed]}
           onPressIn={handlePressIn}
@@ -31,7 +27,7 @@ export default function Button({ label, onPress, style }) {
             {label}
           </Text>
         </TouchableOpacity>
-      </LinearGradient>
+      
     </View>
   );
 }
@@ -41,6 +37,7 @@ const styles = StyleSheet.create({
     width: 320,
     height: 68,
     marginHorizontal: 20,
+    marginVertical:10,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
@@ -52,6 +49,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3, // Schattenopazität
     shadowRadius: 100, // Schattenradius
     elevation: 5, // Android elevation für Schatten
+    backgroundColor:'rgba(35, 25, 66, 0.9)',
     
   },
   button: {
@@ -67,17 +65,17 @@ const styles = StyleSheet.create({
     //elevation: 4,
   //},
   buttonLabel: {
-    color: 'black',
+    color: 'white',
     fontSize: 30,
-    fontFamily: 'CustomFont',
+    fontFamily: 'SUSE-VariableFont_wght',
     textAlign: 'center',
     paddingHorizontal: 10,
   },
-  gradient: {
-    borderRadius: 16,
-    height: '100%',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // gradient: {
+  //   borderRadius: 16,
+  //   height: '100%',
+  //   width: '100%',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
 });

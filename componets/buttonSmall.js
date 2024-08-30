@@ -10,7 +10,7 @@ export default function ButtonSmall({ label, onPress }) {
         style={styles.gradient}
       >
         <TouchableOpacity style={styles.button} onPress={onPress}>
-          <Text style={[styles.buttonLabel, {fontFamily: 'CustomFont'}]}>{label}</Text>
+          <Text style={[styles.buttonLabel, {fontFamily: 'SUSE-VariableFont_wght'}]}>{label}</Text>
         </TouchableOpacity>
       </LinearGradient>
     </View>

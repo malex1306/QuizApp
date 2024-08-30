@@ -10,6 +10,9 @@ import Title from '../componets/title';
 import About from './about';
 import GlowingButton from '../componets/glowingButton';
 import Menu1 from '../componets/menu';
+import ButtomNavigation from '../componets/buttomNavigation';
+
+
 
 
 
@@ -25,7 +28,7 @@ const Home = ({navigation}) => {
       
       <View style={styles.container}>
         <Title />
-      <FloatingButton style={styles.FloatingButton} />
+      
         
         <View style={styles.footerContainer}>
           <Button label="NETWORK QUIZ"
@@ -35,11 +38,13 @@ const Home = ({navigation}) => {
           <Button label="NETWORK CALC" onPress={() => navigation.navigate('NetworkCalculator')}/>
           <Button label="HANGMAN" />
         </View>
-        <View style={styles.smallFooterContainer}>
-          <ButtonSmall label="ABOUT" onPress={() => navigation.navigate('About')}/>
-          
-        </View>
+      
+        <View style={styles.bar}>
+          <ButtomNavigation/>
+          </View>
+        
       </View>
+      
 
     </ImageBackground>
     
@@ -53,6 +58,13 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
+  },
+  bar:{
+    width:'120%',
+    borderRadius:20,
+    marginBottom:-20,
+    borderRadius:20,
+    
   },
   
   container: {
@@ -69,9 +81,11 @@ const styles = StyleSheet.create({
   },
 
   footerContainer: {
+    
     flex:1,
     width: '100%',
     alignItems: 'center',
+    padding:5
   },
 
   headFont: {
