@@ -5,6 +5,7 @@ import ButtonSmall from '../componets/buttonSmall';
 import { StatusBar } from 'expo-status-bar';
 import Title from '../componets/title';
 import questionsData from '../componets/questions.json'; 
+import ButtomNavigation from '../componets/buttomNavigation';
 
 export default function Quiz({ navigation }) {
   const [questions, setQuestions] = useState([]);
@@ -68,7 +69,7 @@ export default function Quiz({ navigation }) {
 
   return (
     <ImageBackground
-      source={require('../assets/background.jpg')}
+      source={require('../assets/bgQ.jpg')}
       style={styles.background}
       resizeMode='cover'
     >
@@ -106,6 +107,9 @@ export default function Quiz({ navigation }) {
         </View>
         <StatusBar style="auto" />
       </View>
+      <View style={styles.bar}>
+          <ButtomNavigation/>
+          </View>
     </ImageBackground>
   );
 }
@@ -115,6 +119,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
+  },
+  bar:{
+    width:'100%',
+    borderRadius:10,
+    marginBottom:0,
+    borderRadius:10,
   },
   container: {
     flex: 1,

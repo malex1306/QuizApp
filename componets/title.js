@@ -15,7 +15,7 @@ export default Title
 
 const styles = StyleSheet.create({
     title:{
-        marginTop: 175,
+        marginTop: 100,
         alignItems: 'center',
         fontSize:70,
         color:'white'

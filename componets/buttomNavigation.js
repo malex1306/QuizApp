@@ -100,8 +100,8 @@ function SettingsScreen() {
 
 const styles = StyleSheet.create({
   tabBarContainer: {
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    // borderTopLeftRadius: 30,
+    // borderTopRightRadius: 30,
     overflow: 'hidden',
     color:'white'
   },
