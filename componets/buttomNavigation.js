@@ -110,7 +110,8 @@ function SettingsScreen() {
 const styles = StyleSheet.create({
   tabBarContainer: {
     overflow: 'hidden',
-    color: 'white'
+    color: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)'
   },
   bottomBar: {
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -119,6 +120,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
 });

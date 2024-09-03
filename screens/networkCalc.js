@@ -38,7 +38,7 @@ const NetworkCalculator = () => {
 
   return (
     <ImageBackground 
-      source={require('../assets/background.jpg')} 
+      source={require('../assets/bgQ.jpg')} 
       style={styles.background1}
       resizeMode="cover"
     >
