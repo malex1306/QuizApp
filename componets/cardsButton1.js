@@ -11,21 +11,20 @@ const MyComponent = () => {
 
   return (
     <Appbar.Header style={styles.buttom}>
-      <Appbar.BackAction onPress={_goBack} />
-      <Appbar.Content title="Title" />
-      <Appbar.Action icon="magnify" onPress={_handleSearch} />
-      <Appbar.Action icon="dots-vertical" onPress={_handleMore} />
+      <Appbar.BackAction onPress={_goBack} color='white'/>
+      <Appbar.Action icon="dots-vertical" onPress={_handleMore} color='white'/>
     </Appbar.Header>
   );
 };
 
 const styles= StyleSheet.create({
   buttom:{
-  width:400,
+  width:100,
   justifyContent:'center',
   alignItems:'center',
-  backgroundColor:'white',
+  backgroundColor:'transparent',
   borderRadius:20,
+  
   }
     
 })

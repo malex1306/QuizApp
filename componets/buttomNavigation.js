@@ -18,7 +18,7 @@ export default function ButtomNavigation() {
           <BottomNavigation.Bar
             navigationState={state}
             safeAreaInsets={insets}
-            style={styles.bottomBar} // Apply custom background and rounded corners
+            style={styles.bottomBar}
             onTabPress={({ route, preventDefault }) => {
               const event = navigation.emit({
                 type: 'tabPress',
@@ -29,10 +29,19 @@ export default function ButtomNavigation() {
               if (event.defaultPrevented) {
                 preventDefault();
               } else {
-                navigation.dispatch({
-                  ...CommonActions.navigate(route.name, route.params),
-                  target: state.key,
-                });
+                // Check if the user is already on the Home screen
+                if (route.name === 'Home' && state.index === 0) {
+                  // If already on Home, pop to top
+                  navigation.dispatch(
+                    CommonActions.popToTop()
+                  );
+                } else {
+                  // Otherwise, navigate to the route
+                  navigation.dispatch({
+                    ...CommonActions.navigate(route.name, route.params),
+                    target: state.key,
+                  });
+                }
               }
             }}
             renderIcon={({ route, focused, color }) => {
@@ -100,13 +109,11 @@ function SettingsScreen() {
 
 const styles = StyleSheet.create({
   tabBarContainer: {
-    // borderTopLeftRadius: 30,
-    // borderTopRightRadius: 30,
     overflow: 'hidden',
-    color:'white'
+    color: 'white'
   },
   bottomBar: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Background color of the bottom bar
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   container: {
     flex: 1,
