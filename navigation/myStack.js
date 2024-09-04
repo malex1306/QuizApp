@@ -4,7 +4,6 @@ import Quiz from '../screens/quiz';
 import Result from '../screens/result';
 import About from '../screens/about';
 import Cards from '../screens/cards';
-import NetworkCalculator from '../screens/networkCalc';
 import MyComponent from '../componets/cardsButton1';
 
 const Stack = createStackNavigator();
@@ -22,10 +21,7 @@ function MyStack() {
             options={{headerShown:false}}/>
             <Stack.Screen name="Cards" component={Cards}
             options={{headerShown:false}}/>
-            <Stack.Screen name="NetworkCalculator" component={NetworkCalculator}
-            options={{headerShown:false}}/>
-            <Stack.Screen name="MyComponent" component={MyComponent}
-            options={{headerShown:false}}/>
+            
         </Stack.Navigator>
         
     );

@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   bar:{
-    width:'120%',
+    width:'100%',
     borderRadius:20,
-    marginBottom:-20,
+    marginBottom:200,
     borderRadius:20,
     
   },

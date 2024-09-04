@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+
 import { CommonActions } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text, BottomNavigation } from 'react-native-paper';
@@ -14,57 +15,45 @@ export default function ButtomNavigation() {
         headerShown: false,
       }}
       tabBar={({ navigation, state, descriptors, insets }) => (
-        <View style={styles.tabBarContainer}>
-          <BottomNavigation.Bar
-            navigationState={state}
-            safeAreaInsets={insets}
-            style={styles.bottomBar}
-            onTabPress={({ route, preventDefault }) => {
-              const event = navigation.emit({
-                type: 'tabPress',
-                target: route.key,
-                canPreventDefault: true,
+        <BottomNavigation.Bar
+          navigationState={state}
+         safeAreaInsets={insets}
+          onTabPress={({ route, preventDefault }) => {
+            const event = navigation.emit({
+              type: 'tabPress',
+              target: route.key,
+              canPreventDefault: true,
+            });
+
+            if (event.defaultPrevented) {
+              preventDefault();
+            } else {
+             navigation.dispatch({
+                ...CommonActions.navigate(route.name, route.params),
+                target: state.key,
               });
+            }
+          }}
+          renderIcon={({ route, focused, color }) => {
+            const { options } = descriptors[route.key];
+            if (options.tabBarIcon) {
+              return options.tabBarIcon({ focused, color, size: 24 });
+            }
 
-              if (event.defaultPrevented) {
-                preventDefault();
-              } else {
-                // Check if the user is already on the Home screen
-                if (route.name === 'Home' && state.index === 0) {
-                  // If already on Home, pop to top
-                  navigation.dispatch(
-                    CommonActions.popToTop()
-                  );
-                } else {
-                  // Otherwise, navigate to the route
-                  navigation.dispatch({
-                    ...CommonActions.navigate(route.name, route.params),
-                    target: state.key,
-                  });
-                }
-              }
-            }}
-            renderIcon={({ route, focused, color }) => {
-              const { options } = descriptors[route.key];
-              if (options.tabBarIcon) {
-                return options.tabBarIcon({ focused, color, size: 24 });
-              }
+            return null;
+          }}
+          getLabelText={({ route }) => {
+            const { options } = descriptors[route.key];
+            const label =
+              options.tabBarLabel !== undefined
+                ? options.tabBarLabel
+                : options.title !== undefined
+                ? options.title
+                : route.title;
 
-              return null;
-            }}
-            getLabelText={({ route }) => {
-              const { options } = descriptors[route.key];
-              const label =
-                options.tabBarLabel !== undefined
-                  ? options.tabBarLabel
-                  : options.title !== undefined
-                  ? options.title
-                  : route.title;
-
-              return label;
-            }}
-          />
-        </View>
+            return label;
+          }}
+        />
       )}
     >
       <Tab.Screen
@@ -94,7 +83,7 @@ export default function ButtomNavigation() {
 function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text variant="bodySmall">Home!</Text>
+      <Text variant="headlineMedium">Home!</Text>
     </View>
   );
 }
@@ -102,24 +91,15 @@ function HomeScreen() {
 function SettingsScreen() {
   return (
     <View style={styles.container}>
-      <Text variant="bodySmall">Settings!</Text>
+      <Text variant="headlineMedium">Settings!</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  tabBarContainer: {
-    overflow: 'hidden',
-    color: 'white',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)'
-  },
-  bottomBar: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
 });
