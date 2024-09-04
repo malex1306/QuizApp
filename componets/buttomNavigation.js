@@ -1,9 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-
-import { CommonActions } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, BottomNavigation } from 'react-native-paper';
+import { BottomNavigation } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
@@ -17,7 +14,7 @@ export default function ButtomNavigation() {
       tabBar={({ navigation, state, descriptors, insets }) => (
         <BottomNavigation.Bar
           navigationState={state}
-         safeAreaInsets={insets}
+          safeAreaInsets={insets}
           onTabPress={({ route, preventDefault }) => {
             const event = navigation.emit({
               type: 'tabPress',
@@ -28,7 +25,7 @@ export default function ButtomNavigation() {
             if (event.defaultPrevented) {
               preventDefault();
             } else {
-             navigation.dispatch({
+              navigation.dispatch({
                 ...CommonActions.navigate(route.name, route.params),
                 target: state.key,
               });
@@ -39,7 +36,6 @@ export default function ButtomNavigation() {
             if (options.tabBarIcon) {
               return options.tabBarIcon({ focused, color, size: 24 });
             }
-
             return null;
           }}
           getLabelText={({ route }) => {
@@ -50,7 +46,6 @@ export default function ButtomNavigation() {
                 : options.title !== undefined
                 ? options.title
                 : route.title;
-
             return label;
           }}
         />
@@ -58,48 +53,24 @@ export default function ButtomNavigation() {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={() => null} // Hier wird `null` zurückgegeben, um den Bildschirm leer zu lassen
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => {
-            return <Icon name="home" size={size} color={color} />;
-          },
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={() => null} // Hier wird `null` zurückgegeben, um den Bildschirm leer zu lassen
         options={{
           tabBarLabel: 'Settings',
-          tabBarIcon: ({ color, size }) => {
-            return <Icon name="cog" size={size} color={color} />;
-          },
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="cog" size={size} color={color} />
+          ),
         }}
       />
     </Tab.Navigator>
   );
 }
-
-function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <Text variant="headlineMedium">Home!</Text>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={styles.container}>
-      <Text variant="headlineMedium">Settings!</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

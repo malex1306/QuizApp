@@ -10,7 +10,10 @@ import Title from '../componets/title';
 import About from './about';
 import GlowingButton from '../componets/glowingButton';
 import Menu1 from '../componets/menu';
+import MyMenu from '../componets/menu';
+import BNavigation from '../componets/bNavigation';
 import ButtomNavigation from '../componets/buttomNavigation';
+import MyTabs from '../componets/bNavigation';
 
 
 
@@ -39,9 +42,10 @@ const Home = ({navigation}) => {
           <Button label="HANGMAN" />
         </View>
       
-        <View style={styles.bar}>
+          <View style ={styles.bNav}>
           <ButtomNavigation/>
           </View>
+          
         
       </View>
       
@@ -59,11 +63,13 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  bar:{
+  bNav:{
+    
+    height:'10%',
     width:'100%',
     borderRadius:20,
-    marginBottom:200,
-    borderRadius:20,
+    marginBottom:0,
+    
     
   },
   
@@ -72,21 +78,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
+    padding: 0,
   },
 
-  FloatingButton:{
-    position:'absolute',
-    top:20,
-    left:60,
-  },
+
 
   footerContainer: {
     
     flex:1,
     width: '100%',
     alignItems: 'center',
-    padding:5
+    padding:0
   },
 
   headFont: {
@@ -99,13 +101,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: '#fff',
   },
-  smallFooterContainer: {
-    marginBottom: 20,
-    paddingVertical: 16,
-    justifyContent: "center",
-    flexDirection: "row",
-    width: '100%', 
-  },
+ 
   topFooterContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

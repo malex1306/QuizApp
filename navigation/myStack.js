@@ -5,6 +5,7 @@ import Result from '../screens/result';
 import About from '../screens/about';
 import Cards from '../screens/cards';
 import MyComponent from '../componets/cardsButton1';
+import MyTabs from '../componets/bNavigation';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,8 @@ function MyStack() {
             options={{headerShown:false}}/>
             <Stack.Screen name="Cards" component={Cards}
             options={{headerShown:false}}/>
-            
+            <Stack.Screen name="MyTabs" component={MyTabs}
+            options={{headerShown:false}}/>
         </Stack.Navigator>
         
     );
