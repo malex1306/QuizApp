@@ -18,24 +18,18 @@ import HabitCard2 from '../componets/card2'
 const Cards = () => {
   return (
     <ImageBackground
-    source={require('../assets/background.jpg')} 
+    source={require('../assets/bgQ.jpg')} 
       style={styles.background}
       resizeMode="cover"
     >
     <View style={styles.container}>
-      <MyComponent/>
     </View>
       <View style={styles.box}>
         <HabitCard/>
         <HabitCard1/>
-        <View/>
-        <View style={styles.box1}>
-        <HabitCard2/>
-        </View>
-       
-       
-       
-        
+      </View>
+      <View style={styles.box1}>
+      <HabitCard2/>
       </View>
     </ImageBackground>
   )
@@ -64,10 +58,10 @@ const styles = StyleSheet.create({
       right:24
     },
     box1:{
-      //flexDirection: 'row',  // Kinder werden horizontal angeordnet
+      flexDirection: 'row',  // Kinder werden horizontal angeordnet
       justifyContent: 'space-between',  // Platz zwischen den Karten
       paddingHorizontal: 10,  // Optionale Innenabstände
-      top: 400,
+      top: 100,
       right:24
     }
  
